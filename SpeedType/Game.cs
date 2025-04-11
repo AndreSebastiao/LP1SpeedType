@@ -10,18 +10,18 @@ namespace SpeedType
         /// <summary>
         /// The provider responsible for generating the sentences for the game.
         /// </summary>
-        private readonly SentenceProvider sentenceProvider; // done
+        private readonly SentenceProvider sentenceProvider;
 
         /// <summary>
         /// The evaluator responsible for calculating the user's performance 
         /// (WPM and accuracy).
         /// </summary>
-        private readonly Evaluator evaluator; // done
+        private readonly Evaluator evaluator;
 
         /// <summary>
         /// A list to store the last 5 game results for the game stats board.
         /// </summary>
-        private readonly GameResult[] gameStats; // done
+        private readonly GameResult[] gameStats;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Game"/> class.
