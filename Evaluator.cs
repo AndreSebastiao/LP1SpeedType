@@ -25,7 +25,8 @@ namespace SpeedType
         /// </remarks>
         public double CalculateWPM(string userInput, double timeTaken)
         {
-            int wordsTyped = // ////////// => TO IMPLEMENT <= //////////// //
+            int wordsTyped = userInput.Split(new[] { ' ' },
+                StringSplitOptions.RemoveEmptyEntries).Length;
             return (wordsTyped / timeTaken) * 60;
         }
 
@@ -51,13 +52,15 @@ namespace SpeedType
         public int CalculateAccuracy(string userInput, string originalText)
         {
             int correctChars = 0;
-            int minLength = // ////////// => TO IMPLEMENT <= //////////// //
+            int minLength = userInput.Length;
 
             for (int i = 0; i < minLength; i++)
             {
-                // ////////// => TO IMPLEMENT <= //////////// //
+                if (i < originalText.Length && userInput[i] == originalText[i])
+                {
+                    correctChars++;
+                }
             }
-
             return (int)((double)correctChars / originalText.Length * 100);
         }
     }
