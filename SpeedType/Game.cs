@@ -21,7 +21,7 @@ namespace SpeedType
         /// <summary>
         /// A list to store the last 5 game results for the game stats board.
         /// </summary>
-        private readonly GameResult[] gameStats;
+        private readonly GameResult[] gameStats; // done
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Game"/> class.
@@ -30,7 +30,9 @@ namespace SpeedType
         /// </summary>
         public Game()
         {
-            // ////////// => TO IMPLEMENT <= //////////// //
+            sentenceProvider = new SentenceProvider();
+            evaluator = new Evaluator();
+            gameStats = new GameResult[5];
         }
 
         /// <summary>
@@ -155,10 +157,6 @@ namespace SpeedType
                 if (gameStats[i] == null)
                 {
                     continue;
-                }
-                else if (i >= 5)
-                {
-                    break;
                 }
 
                 // Add row to table
