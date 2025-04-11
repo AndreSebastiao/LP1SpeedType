@@ -100,15 +100,15 @@ namespace SpeedType
             stopwatch.Stop();
 
             // The time taken by the user to type the sentence.
-            double timeTaken = stopwatch.Elapsed.TotalSeconds;
+            double timeTaken = GameResult.GameResult();
 
             // The words per minute (WPM) calculated based on the time taken 
             // and the user input.
-            double wpm = evaluator.CalculateWPM(userInput, timeTaken);
+            double wpm = GameResult.GameResult(userInput, timeTaken);
 
             // The accuracy percentage calculated based on the user's input and
             // the original sentence.
-            int accuracy = evaluator.CalculateAccuracy(userInput, originalText);
+            int accuracy = GameResult.GameResult(userInput, originalText);
 
             // Shift existing entries
             for (int i = gameStats.Length - 1; i > 0; i--)

@@ -45,7 +45,9 @@ namespace SpeedType
         /// <see cref="double"/> (in seconds).</param>
         public GameResult(double wpm, int accuracy, double timeTaken)
         {
-            // ////////// => TO IMPLEMENT <= //////////// //
+            double wpm = evaluator.CalculateWPM(userInput, timeTaken);
+            int accuracy = evaluator.CalculateAccuracy(userInput, originalText);
+            double timeTaken = stopwatch.Elapsed.TotalSeconds;
         }
     }
 }
